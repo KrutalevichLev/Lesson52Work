@@ -1,0 +1,14 @@
+#include "logic.h"
+
+int recursion(int number) {
+	if (number < 10) {
+		return number;
+	}
+
+	return recursion(number / 10) + number % 10;
+}
+
+int sum_of_digits(int number) {
+	number *= (number < 0 ? -1 : 1);
+	return recursion(number);
+}
